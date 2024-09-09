@@ -14,13 +14,38 @@ resources:
           - huangyue1752@gmail.com
 
       tasks:
-        - task_key: notebook_task
+        - task_key: notebook_task1
           job_cluster_key: job_cluster
           libraries:
             - maven:
                 coordinates: com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.22
           notebook_task:
-            notebook_path: ../src/notebook.ipynb
+            notebook_path: ../src/shopify/shopify_bronze/shopofy_bronze.ipynb
+
+        - task_key: notebook_task2
+          job_cluster_key: job_cluster
+          libraries:
+            - maven:
+                coordinates: com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.22
+          notebook_task:
+            notebook_path: ../src/shopify/shopify_silver/shopofy_silver.ipynb
+
+        - task_key: notebook_task3
+          job_cluster_key: job_cluster
+          libraries:
+            - maven:
+                coordinates: com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.22
+          notebook_task:
+            notebook_path: ../src/shopify/shopify_golden/shopofy_golden.ipynb
+
+        - task_key: notebook_task4
+          job_cluster_key: job_cluster
+          libraries:
+            - maven:
+                coordinates: com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.22
+          notebook_task:
+            notebook_path: ../src/shopify/shopify_scd2/shopify_scd2_function.ipynb
+        
         
       job_clusters:
         - job_cluster_key: job_cluster
